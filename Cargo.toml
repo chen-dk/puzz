@@ -1,0 +1,12 @@
+[workspace]
+members = [
+    "puzz",
+    "puzz-core",
+    "puzz-http",
+    "puzz-middleware",
+    "puzz-multipart",
+    "puzz-route",
+    "puzz-server",
+    "puzz-service",
+    "puzz-sse",
+]

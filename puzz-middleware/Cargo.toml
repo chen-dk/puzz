@@ -1,0 +1,21 @@
+[package]
+name = "puzz-middleware"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Middleware for puzz."
+repository = "https://github.com/chen-dk/puzz"
+keywords = ["http", "web", "middleware", "puzz"]
+categories = ["network-programming", "web-programming"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+puzz-core = { path = "../puzz-core", version = "0.1.0" }
+
+futures-core = "0.3"
+pin-project-lite = "0.2"
+
+[features]
+default = []
+core = []

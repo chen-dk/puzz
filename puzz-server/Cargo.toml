@@ -1,0 +1,33 @@
+[package]
+name = "puzz-server"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "HTTP server for puzz."
+repository = "https://github.com/chen-dk/puzz"
+keywords = ["http", "web", "async", "server", "puzz"]
+categories = [
+    "network-programming",
+    "web-programming::http-server",
+    "asynchronous",
+]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+puzz-core = { path = "../puzz-core", version = "0.1.0" }
+
+actix-http = { version = "3", features = ["http2"], optional = true }
+actix-server = { version = "2", optional = true }
+actix-service = { version = "2", optional = true }
+
+tokio = { version = "1", default-features = false }
+futures-core = "0.3"
+pin-project-lite = "0.2"
+
+[dev-dependencies]
+tokio = { version = "1", default-features = false, features = ["test-util"] }
+
+[features]
+default = ["actix"]
+actix = ["actix-http", "actix-server", "actix-service"]

@@ -1,0 +1,17 @@
+[package]
+name = "puzz-route"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Matches incoming HTTP requests and dispatches them to the service for processing."
+repository = "https://github.com/chen-dk/puzz"
+keywords = ["http", "web", "routing", "puzz"]
+categories = ["network-programming", "web-programming"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+puzz-core = { path = "../puzz-core", version = "0.1.0" }
+
+matchit = "0.5"
+pin-project-lite = "0.2"

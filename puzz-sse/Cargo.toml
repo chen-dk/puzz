@@ -1,0 +1,22 @@
+[package]
+name = "puzz-sse"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Server-Sent Events (SSE) library for puzz."
+repository = "https://github.com/chen-dk/puzz"
+keywords = ["http", "web", "async", "sse", "puzz"]
+categories = ["network-programming", "web-programming", "asynchronous"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+puzz-core = { path = "../puzz-core", version = "0.1.0" }
+
+mime = "0.3"
+memchr = "2.4"
+futures-core = "0.3"
+pin-project-lite = "0.2"
+serde = "1"
+serde_json = "1"
+tokio = { version = "1", default-features = false, features = ["time"] }

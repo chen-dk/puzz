@@ -1,0 +1,21 @@
+[package]
+name = "puzz-multipart"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Multipart form support for puzz."
+repository = "https://github.com/chen-dk/puzz"
+keywords = ["http", "web", "async", "multipart", "puzz"]
+categories = ["network-programming", "web-programming", "asynchronous"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-http = "3"
+actix-multipart = "0.4.0"
+
+http = "0.2"
+mime = "0.3"
+bytes = "1"
+futures-util = "0.3"
+pin-project-lite = "0.2"

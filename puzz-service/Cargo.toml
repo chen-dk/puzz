@@ -1,0 +1,20 @@
+[package]
+name = "puzz-service"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Service trait for representing asynchronous request/response operations."
+repository = "https://github.com/chen-dk/puzz"
+keywords = ["async", "futures", "service", "puzz"]
+categories = ["network-programming", "asynchronous"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+pin-project-lite = { version = "0.2", optional = true }
+futures-util = { version = "0.3", optional = true }
+
+[features]
+default = ["alloc"]
+alloc = []
+util = ["pin-project-lite", "futures-util", "alloc"]

@@ -1,0 +1,17 @@
+[package]
+name = "puzz-http"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "A set of types for representing HTTP requests and responses."
+repository = "https://github.com/chen-dk/puzz"
+keywords = ["http", "web", "puzz"]
+categories = ["network-programming", "web-programming"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+http = "0.2"
+bytes = "1"
+futures-core = "0.3"
+pin-project-lite = "0.2"

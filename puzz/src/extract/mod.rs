@@ -11,7 +11,7 @@ pub mod extension;
 pub use extension::{extension, extension_mut};
 
 pub mod param;
-pub use param::{param, param_ref, params};
+pub use param::{param, param_raw, params};
 
 pub mod query;
 pub use query::query;

@@ -5,9 +5,8 @@ use std::str::FromStr;
 use puzz_core::{BoxError, Request};
 use puzz_route::Params;
 
-pub fn param_ref<'a>(request: &'a Request, name: &str) -> Option<&'a str> {
-    crate::extract::extension::<Params>(request)
-        .and_then(|params| params.get_ref().get(name).map(|v| v.as_str()))
+pub fn param_raw<'a>(request: &'a Request, name: &str) -> Option<&'a str> {
+    params(request).and_then(|params| params.get(name).map(|v| v.as_str()))
 }
 
 pub fn param<T>(request: &Request, name: &str) -> Result<T, ExtractParamError>
@@ -15,7 +14,7 @@ where
     T: FromStr,
     T::Err: Into<BoxError>,
 {
-    param_ref(request, name).map_or_else(
+    param_raw(request, name).map_or_else(
         || Err(ExtractParamError::MissingParam { name: name.into() }),
         |param| {
             param
@@ -28,9 +27,8 @@ where
     )
 }
 
-pub fn params(request: &Request) -> HashMap<String, String> {
-    crate::extract::extension(request)
-        .map_or_else(HashMap::new, |params: &Params| params.clone().into_inner())
+pub fn params(request: &Request) -> Option<&HashMap<String, String>> {
+    crate::extract::extension(request).map(|params: &Params| params.get_ref())
 }
 
 #[derive(Debug)]
